@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    image: python
+    command: python -m http.server 8080
+    working_dir: /usr/local/app
+    ports:
+      - 8080:8080
+    volumes:
+      - ./public:/usr/local/app
