@@ -1,13 +1,14 @@
 version: '3'
 services:
   app:
-    image: python
-    command: python -m http.server 8080
+    image: node
+    command: npm start
     working_dir: /usr/local/app
     ports:
       - 8080:8080
+      - 8081:8081
     volumes:
-      - ./public:/usr/local/app
+      - .:/usr/local/app
 
   end2end:
     image: cypress/base
