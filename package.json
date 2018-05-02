@@ -15,6 +15,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.6.0",
@@ -22,6 +23,7 @@
     "webpack-serve": "^0.3.1"
   },
   "dependencies": {
+    "firebase": "^4.13.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   }
