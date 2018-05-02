@@ -11,9 +11,7 @@ services:
       - .:/usr/local/app
 
   end2end:
-    image: cypress/base
-    command: npm test
-    working_dir: /usr/local/end2end
+    build: ./end2end
     volumes:
       - ./end2end:/usr/local/end2end
     depends_on:
