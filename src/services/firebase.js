@@ -1,6 +1,4 @@
 import config from '../../config/environment';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 
-const services = firebase.initializeApp(config.firebase);
-
-export const database = services.database();
+export default firebase.initializeApp(config.firebase);

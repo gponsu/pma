@@ -8,8 +8,12 @@ export default {
     return await storage.getAll();
   },
 
-  save: async (task) => {
-    return await storage.set(task);
+  save: (task) => {
+    return storage.set(task);
+  },
+
+  remove: (task) => {
+    return storage.remove(task);
   }
 };
 

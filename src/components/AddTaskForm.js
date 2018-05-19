@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import uuid from 'uuid/v4';
+import Task from '../models/task';
 
 class AddTaskForm extends Component {
   state = { task: '' }
@@ -13,8 +14,15 @@ class AddTaskForm extends Component {
   handleSubmit = (event) => {
     const { onAddTask } = this.props;
 
+    const attrs = {
+      id: uuid(),
+      title: this.state.task
+    };
+
+    const newTask = new Task(attrs);
+
     event.preventDefault();
-    onAddTask(this.state.task);
+    onAddTask(newTask);
 
     this.setState({ task: '' });
   }

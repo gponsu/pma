@@ -19,7 +19,19 @@ class App extends React.Component {
       tasks: [...prevState.tasks, task] 
     }));
 
-    taskRepository.save(task);
+    const patata = taskRepository.save(task);
+  }
+
+  handleRemoveTask = (task) => {
+    if(!task) return;
+
+    const newTasks = this.state.tasks.filter(t => t !== task);
+
+    this.setState(prevState => ({ 
+      tasks: newTasks 
+    }));
+
+    const patata = taskRepository.remove(task);
   }
 
   render() {
@@ -27,7 +39,7 @@ class App extends React.Component {
       <div>
         <h1>Project Management App</h1>
         <AddTaskForm onAddTask={this.handleAddTask} />
-        <TaskList tasks={this.state.tasks} />
+        <TaskList tasks={this.state.tasks} onRemoveTask={this.handleRemoveTask} />
       </div>
     );
   }

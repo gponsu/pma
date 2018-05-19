@@ -1,10 +1,11 @@
 const settings = () => {
   let ENV = {
-    storage: 'firebase',
+    storage: 'firestore',
     firebase:  {
       apiKey: 'AIzaSyDwiHFv5ivq01dFfHTti2-7Q1TR2fFv1cQ',
       authDomain: 'pma-project.firebaseapp.com',
       databaseURL: 'https://pma-project.firebaseio.com',
+      projectId: 'pma-project',
       storageBucket: 'pma-project.appspot.com'
     }
   };

@@ -1,7 +1,7 @@
 import nullStorage from './null';
-import firebaseStorage from './firebase';
+import firestore from './firestore';
 
 export default (storage) => {
-  if(storage === 'firebase') return firebaseStorage;
+  if(storage === 'firestore') return firestore;
   return nullStorage;
 };

@@ -1,4 +1,5 @@
 export default {
   getAll: () => ([]),
-  set: item => {}
+  set: item => {},
+  remove: item => {}
 };
