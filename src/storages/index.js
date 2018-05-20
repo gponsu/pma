@@ -1,7 +1,7 @@
-import nullStorage from './null';
-import firestore from './firestore';
+import nullStorage from "./null";
+import firestore from "./firestore";
 
-export default (storage) => {
-  if(storage === 'firestore') return firestore;
+export default storage => {
+  if (storage === "firestore") return firestore;
   return nullStorage;
 };

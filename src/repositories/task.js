@@ -1,5 +1,5 @@
-import config from '../../config/environment';
-import loadStorage from '../storages';
+import config from "../../config/environment";
+import loadStorage from "../storages";
 
 const storage = loadStorage(config.storage);
 
@@ -8,12 +8,11 @@ export default {
     return await storage.getAll();
   },
 
-  save: (task) => {
+  save: task => {
     return storage.set(task);
   },
 
-  remove: (task) => {
+  remove: task => {
     return storage.remove(task);
   }
 };
-

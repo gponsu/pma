@@ -1,4 +1,4 @@
-function Task({id, title}) {
+function Task({ id, title }) {
   this.id = id;
   this.title = title;
 }

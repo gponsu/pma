@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
-import uuid from 'uuid/v4';
-import Task from '../models/task';
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import uuid from "uuid/v4";
+import Task from "../models/task";
 
 class AddTaskForm extends Component {
-  state = { task: '' }
+  static propTypes = {
+    onAddTask: PropTypes.func
+  };
 
-  handleChange = (event) => {
+  state = { task: "" };
+
+  handleChange = event => {
     const task = event.target.value;
 
     this.setState({ task });
-  }
+  };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     const { onAddTask } = this.props;
 
     const attrs = {
@@ -24,8 +29,8 @@ class AddTaskForm extends Component {
     event.preventDefault();
     onAddTask(newTask);
 
-    this.setState({ task: '' });
-  }
+    this.setState({ task: "" });
+  };
 
   render() {
     return (

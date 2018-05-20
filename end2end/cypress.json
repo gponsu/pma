@@ -1,3 +1,6 @@
 {
+  "integrationFolder": "./",
+  "pluginsFile": false,
+  "supportFile": false,
   "videoRecording": false
 }
