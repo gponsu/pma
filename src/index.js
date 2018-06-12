@@ -2,7 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import TaskList from "./components/TaskList";
 import AddTaskForm from "./components/AddTaskForm";
+import Timer from "./components/Timer";
 import taskRepository from "./repositories/task";
+import pomodoroRepository from "./repositories/pomodoro";
+import uuid from "uuid/v4";
 
 class App extends React.Component {
   state = { tasks: [] };
@@ -42,6 +45,24 @@ class App extends React.Component {
         <TaskList
           tasks={this.state.tasks}
           onRemoveTask={this.handleRemoveTask}
+        />
+        <Timer
+          onDone={() => {
+            pomodoroRepository.save({
+              id: uuid(),
+              timestamp: Date.now(),
+              duration: 25 * 60,
+              completed: true
+            });
+          }}
+          onCancel={duration => {
+            pomodoroRepository.save({
+              id: uuid(),
+              timestamp: Date.now(),
+              duration,
+              completed: false
+            });
+          }}
         />
       </div>
     );

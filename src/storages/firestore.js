@@ -12,6 +12,17 @@ export default {
     collection.doc(item.id).set({ title: item.title });
   },
 
+  setPomodoro: item => {
+    db
+      .collection("pomodoros")
+      .doc(item.id)
+      .set({
+        timestamp: item.timestamp,
+        duration: item.duration,
+        completed: item.completed
+      });
+  },
+
   remove: async item => {
     collection.doc(item.id).delete();
   }
